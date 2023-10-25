@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--Ahmad Alvin Griffin (24060121140106)
+    Arya Dheffan Shevchenko (24060121140160)
+    Dafa Kurnia Dinata (24060121120003)
+    Dhiya Mazaya (24060121140151)
+    Rafif Abbrar Maheswara (24060121140163)-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Snake Game JavaScript | Kelompok 7</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <audio id="startMusic" loop>
+      <source src="start-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="gameplayMusic" loop>
+      <source src="gameplay-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="gameoverMusic">
+      <source src="gameover-music.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="foodEatSound">
+      <source src="food-eat.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="deathSound">
+      <source src="death.mp3" type="audio/mpeg">
+    </audio>
+    <div class="wrapper">
+      <div class="popup-container" id="startPopup">
+        <div class="popup">
+          <h2>Welcome to Ular Dinatong</h2>
+          <button id="startButton" onclick="audio.play();">Start Game</button>
+          <script>
+            const audio = new Audio();
+            audio.src = "start-click.m4a";
+          </script>
+        </div>
+      </div>      
+      <div class="game-details">
+        <span class="score">Score: 0</span>
+        <span class="high-score">High Score: 0</span>
+      </div>
+      <div class="play-board"></div>
+      <div class="controls">
+        <i data-key="ArrowLeft" class="fa-solid fa-arrow-left-long"></i>
+        <i data-key="ArrowUp" class="fa-solid fa-arrow-up-long"></i>
+        <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
+        <i data-key="ArrowDown" class="fa-solid fa-arrow-down-long"></i>
+      </div>
+      <div class="popup-container" id="popupContainer">
+        <div class="popup">
+            <img src="Gameover.jpg" alt="Game Over">
+            <button id="closePopup">Close</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

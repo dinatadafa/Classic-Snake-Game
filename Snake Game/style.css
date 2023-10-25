@@ -1,0 +1,191 @@
+/* Ahmad Alvin Griffin (24060121140106)
+    Arya Dheffan Shevchenko (24060121140160)
+    Dafa Kurnia Dinata (24060121120003)
+    Dhiya Mazaya (24060121140151)
+    Rafif Abbrar Maheswara (24060121140163) */
+/* Import Google font */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: url("background.png");
+}
+.wrapper {
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  background: #474168;
+  box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
+}
+.game-details {
+  color: #B8C6DC;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+.play-board {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  background: #4850b9;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+.play-board .food {
+  background-image: url("food.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.play-board .head {
+  background-image: url("pacman.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.controls {
+  display: none;
+  justify-content: space-between;
+}
+.controls i {
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #B8C6DC;
+  width: calc(100% / 4);
+  cursor: pointer;
+  border-right: 1px solid #171B26;
+}
+
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup img {
+    max-width: 100%;
+    height: auto;
+    width: 200px;
+}
+
+.popup button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #60CBFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popup button:hover {
+    background-color: #3880FF;
+}
+
+.popup button:active {
+  font-size: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    width: 90vmin;
+    height: 115vmin;
+  }
+  .game-details {
+    font-size: 1rem;
+    padding: 15px 27px;
+  }
+  .controls {
+    display: flex;
+  }
+  .controls i {
+    padding: 15px 0;
+    font-size: 1rem;
+  }
+}
+
+.play-board .head {
+  background-image: url("pacman.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.2s; /* Add a transition for smooth rotation */
+}
+
+/* Define classes for different directions */
+.pacman-left {
+  transform: rotate(180deg); /* Rotate Pac-Man 180 degrees for left direction */
+}
+
+.pacman-right {
+  transform: rotate(0deg); /* No rotation for right direction */
+}
+
+.pacman-up {
+  transform: rotate(-90deg); /* Rotate Pac-Man -90 degrees for up direction */
+}
+
+.pacman-down {
+  transform: rotate(90deg); /* Rotate Pac-Man 90 degrees for down direction */
+}
+
+#startPopup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#startPopup .popup {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+#startButton {
+  display: block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #60CBFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#startButton:hover {
+  background-color: #3880FF;
+}
